@@ -7,7 +7,7 @@ const RecipesCards = ({addRecipeToQueue}) => {
     const [recipes, setRecipes]= useState([])
 
     useEffect(()=>{
-        fetch('../../public/recipes.json')
+        fetch('/public/recipes.json')
         .then(res=>res.json())
         .then(data => setRecipes(data))
 
@@ -17,6 +17,7 @@ const RecipesCards = ({addRecipeToQueue}) => {
     return (
         <div className=" md:w-2/3 "> 
         <div className="grid gird-cols-1 lg:grid-cols-2 gap-6">
+
         {
             recipes.map(recipe => 
                 <div key={recipe.recipe_id} className="card bg-base-100 w-96 shadow-xl">
